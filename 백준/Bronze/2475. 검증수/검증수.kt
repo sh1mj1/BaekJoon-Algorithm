@@ -1,5 +1,17 @@
+import java.util.*
+
 fun main() {
-    val ori = readln().split(" ").map { it.toInt() }
-    val ans = ori.sumOf { it * it } % 10
-    println(ans)
+    System.`in`.bufferedReader().use { br -> 
+        val st = StringTokenizer(br.readLine())
+        var sum = 0
+        while (st.hasMoreTokens()) {
+            val num = st.nextToken().toInt()
+            sum = sum + num * num
+        }
+        val ans = sum % 10
+        System.`out`.bufferedWriter().use { bw -> 
+            bw.write(ans.toString())
+            bw.flush()
+        }
+    }
 }
