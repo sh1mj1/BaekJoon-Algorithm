@@ -1,14 +1,40 @@
+import java.util.*
+
 fun main() {
-    while (true) {
-        val nums = readln().split(" ").map { it.toInt() }
-        if (nums[0] == 0 && nums[1] == 0 && nums[2] == 0) break
-        val sorted = nums.sortedByDescending { it }
-        if (
-            sorted[0] * sorted[0] == sorted[1] * sorted[1] + sorted[2] * sorted[2]
-        ) {
-            println("right")
-            continue
+    System.`out`.bufferedWriter().use { bw ->
+        System.`in`.bufferedReader().use { br ->
+            while (true) {
+                val st = StringTokenizer(br.readLine())
+            
+                val a = st.nextToken().toInt()
+                val b = st.nextToken().toInt()
+                val c = st.nextToken().toInt()
+
+                if (a == 0) break
+
+                if (a > b && a > c ) {
+                    if (a * a == b * b + c * c) {
+                        bw.write("right\n")
+                        continue
+                    }
+                }
+
+                if (b > a && b > c) {
+                    if (b * b == a * a + c * c) {
+                        bw.write("right\n")
+                        continue
+                    }
+                }
+
+                if (c > a && c > b) {
+                    if (c * c == a * a + b * b) {
+                        bw.write("right\n")
+                        continue
+                    }
+                }
+                bw.write("wrong\n")
+            }
         }
-        println("wrong")
+        bw.flush()
     }
 }
