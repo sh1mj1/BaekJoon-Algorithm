@@ -6,8 +6,8 @@ fun main() {
     }
     repeat(c) { i ->
         val starCnt = i + 1
-        repeat(c - starCnt) { print(" ") }
-        repeat(starCnt) { print("*") }
+        print(" ".repeat(c - starCnt))
+        print("*".repeat(starCnt))
         if (starCnt != c) { println() }
     }
 }
