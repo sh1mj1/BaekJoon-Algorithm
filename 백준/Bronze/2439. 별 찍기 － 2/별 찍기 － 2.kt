@@ -1,13 +1,14 @@
 fun main() {
-    val c = readln().toInt()
-    if (c == 1) {
-        print("*")
-        return
-    }
-    repeat(c) { i ->
-        val starCnt = i + 1
-        print(" ".repeat(c - starCnt))
-        print("*".repeat(starCnt))
-        if (starCnt != c) { println() }
+    System.`in`.bufferedReader().use { br ->
+        System.`out`.bufferedWriter().use { bw ->
+            val c = br.readLine().toInt()
+            repeat(c) { i ->
+                val starCount = i + 1
+                bw.write(" ".repeat(c - starCount))
+                bw.write("*".repeat(starCount))
+                bw.newLine()
+            }
+            bw.flush()
+        }
     }
 }
