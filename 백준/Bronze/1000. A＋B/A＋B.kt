@@ -1,5 +1,14 @@
+import java.util.*
+
 fun main() {
-    val input = readln().split(" ").map { it.toInt() }
-    val (a, b) = input[0] to input[1]
-    println(a + b)
+    System.`in`.bufferedReader().use { br ->
+        System.`out`.bufferedWriter().use { bw ->
+            val st = StringTokenizer(br.readLine())
+            val a = st.nextToken().toInt()
+            val b = st.nextToken().toInt()
+            
+            bw.write((a + b).toString())
+            bw.flush()
+        }
+    }
 }
